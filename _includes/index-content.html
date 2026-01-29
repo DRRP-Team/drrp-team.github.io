@@ -67,13 +67,13 @@ version: 0.6.0pre
                         {% if page.lang == 'en' %}
                             <span>The project is temporarily frozen until the end of the
                                 war</span>
-                            <span>The latest version at the moment is {{ page.version }}</span>
+                            <span>The latest version at the moment is {{ site.drrp_version }}</span>
                         {% elsif page.lang == 'ru' %}
                             <span>Проект временно заморожен до окончания войны</span>
-                            <span>Последняя версия на данный момент - {{ page.version }}</span>
+                            <span>Последняя версия на данный момент - {{ site.drrp_version }}</span>
                         {% elsif page.lang == 'uk' %}
                             <span>Проект тимчасово заморожено до закінчення війни</span>
-                            <span>Остання версія на даний момент - {{ page.version }}</span>
+                            <span>Остання версія на даний момент - {{ site.drrp_version }}</span>
                         {% endif %}
                             <a href="https://standwithukraine.com.ua/" target="_blank">
                                 <img width="32"
@@ -181,7 +181,7 @@ version: 0.6.0pre
                     <h2 class="section-heading">
                         {% if page.lang == 'en' %}Download{% elsif page.lang == 'ru' %}Скачать{% elsif page.lang == 'uk' %}Завантажити{% endif %}
                     </h2>
-                    {% if page.lang == 'en' %}Current version: {{ page.version }}{% elsif page.lang == 'ru' %}Текущая версия: {{ page.version }}{% elsif page.lang == 'uk' %}Поточна версія: {{ page.version }}{% endif %}
+                    {% if page.lang == 'en' %}Current version: {{ site.drrp_version }}{% elsif page.lang == 'ru' %}Текущая версия: {{ site.drrp_version }}{% elsif page.lang == 'uk' %}Поточна версія: {{ site.drrp_version }}{% endif %}
                     <hr class="my-4" />
                 </div>
             </div>

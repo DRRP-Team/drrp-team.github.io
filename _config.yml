@@ -19,3 +19,5 @@ languages:
   - uk
 
 default_lang: en
+
+drrp_version: 0.6.0pre
