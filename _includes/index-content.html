@@ -454,13 +454,11 @@ version: 0.6.0pre
                         </a>
                     </li>
                     <li>
-                        {% if page.lang == 'en' %}
                         <a href="https://doomworld.com/forum/topic/102919-drrp-doom-rpg-remake-project/"
-                            target="_blank">Topic on Doom World</a>
-                        {% elsif page.lang == 'ru' or page.lang == 'uk' %}
-                        <a href="http://i.iddqd.ru/viewtopic.php?p=98116" target="_blank">Тема на Doom
-                            Power</a>
-                        {% endif %}
+                            target="_blank">{% if page.lang == 'en' %}Topic on{% elsif page.lang == 'ru' or page.lang == 'uk' %}Тема на{% endif %} Doom World</a>
+                    </li>
+                    <li>
+                        <a href="http://i.iddqd.ru/viewtopic.php?p=98116" target="_blank">{% if page.lang == 'en' %}Topic on{% elsif page.lang == 'ru' or page.lang == 'uk' %}Тема на{% endif %} Doom Power</a>
                     </li>
                     <li>
                         <a href="https://www.moddb.com/mods/drrp-doom-rpg-remake-project" target="_blank">ModDB {% if page.lang == 'en' %}page{% elsif page.lang == 'ru' %}страница{% elsif page.lang == 'uk' %}сторінка{% endif %}</a>
