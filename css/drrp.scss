@@ -306,7 +306,7 @@ header.masthead {
             background: $accent-darklight-color;
             color: #fff;
         }
-        
+
         &[href]:hover en,
         &[href]:hover ru {
             color: #fff;
@@ -315,11 +315,11 @@ header.masthead {
         &[href]:hover .text-muted {
             color: #fff !important;
         }
-        
+
         &:first-child {
             border-top-left-radius: 15px;
         }
-        
+
         &:last-child {
             border-top-right-radius: 15px;
         }
@@ -329,7 +329,7 @@ header.masthead {
             margin: 0 15px;
         }
     }
-    
+
     .btn {
         border: 1px solid $accent-color;
 
@@ -348,7 +348,6 @@ header.masthead {
         top: 0;
         left: 0;
         width: 100%;
-        height: 100vh;
         min-height: 650px;
         background: rgba(0, 0, 0, .7);
         z-index: 0;
@@ -377,15 +376,15 @@ header.masthead {
         display: block;
         max-width: 650px;
         margin: 0 auto;
-    
+
         &:hover .screenshots-box-caption {
             opacity: 1;
         }
-    
+
         &:focus {
             outline: 0;
         }
-    
+
         .screenshots-box-caption {
             position: absolute;
             bottom: 0;
@@ -399,26 +398,26 @@ header.masthead {
             -webkit-transition: all .2s;
             -moz-transition: all .2s;
             transition: all .2s;
-    
+
             .screenshots-box-caption-content {
                 position: absolute;
                 top: 50%;
                 width: 100%;
                 transform: translateY(-50%);
                 text-align: center;
-    
+
                 .project-category,
                 .project-name {
                     padding: 0 15px;
                     font-family: $font;
                 }
-    
+
                 .project-category {
                     font-size: 14px;
                     font-weight: 600;
                     text-transform: uppercase;
                 }
-    
+
                 .project-name {
                     font-size: 18px;
                 }
@@ -482,7 +481,7 @@ header.masthead {
 
     table {
         text-align: left;
-    
+
         td::before {
             content: "-";
             margin: 2px;
@@ -525,7 +524,7 @@ button.mfp-arrow {
         left: 50%;
         transform: translate(-50%, -50%);
     }
-    
+
     &:after {
         top: 50%;
         left: 50%;
