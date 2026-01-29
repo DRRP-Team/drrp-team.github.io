@@ -34,7 +34,7 @@ version: 0.6.0pre
                             {% if page.lang == 'en' %}Donate{% elsif page.lang == 'ru' %}Поддержать{% elsif page.lang == 'uk' %}Поддержать{% endif %}
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item d-flex">
                         {% if page.lang != 'en' %}
                         <a class="nav-link" href="{{ site.baseurl }}/" title="English">🇬🇧</a>
                         {% endif %}
@@ -67,13 +67,13 @@ version: 0.6.0pre
                         {% if page.lang == 'en' %}
                             <span>The project is temporarily frozen until the end of the
                                 war</span>
-                            <span>The latest version at the moment is {{ site.version }}</span>
+                            <span>The latest version at the moment is {{ page.version }}</span>
                         {% elsif page.lang == 'ru' %}
                             <span>Проект временно заморожен до окончания войны</span>
-                            <span>Последняя версия на данный момент - {{ site.version }}</span>
+                            <span>Последняя версия на данный момент - {{ page.version }}</span>
                         {% elsif page.lang == 'uk' %}
                             <span>Проект тимчасово заморожено до закінчення війни</span>
-                            <span>Остання версія на даний момент - {{ site.version }}</span>
+                            <span>Остання версія на даний момент - {{ page.version }}</span>
                         {% endif %}
                             <a href="https://standwithukraine.com.ua/" target="_blank">
                                 <img width="32"
@@ -127,7 +127,7 @@ version: 0.6.0pre
                         languages - all of this in the DRRP project.
                     </p>
                     {% elsif page.lang == 'ru' %}
-                    <p class="about-text text-white mb-4"></p>
+                    <p class="about-text text-white mb-4">
                         Проект DRRP переносит игру Doom RPG с мобильной платформы на
                         движок GZDoom.<br /><br />
                         Оригинальная атмосфера красиво переплетается с новейшими
@@ -181,7 +181,7 @@ version: 0.6.0pre
                     <h2 class="section-heading">
                         {% if page.lang == 'en' %}Download{% elsif page.lang == 'ru' %}Скачать{% elsif page.lang == 'uk' %}Завантажити{% endif %}
                     </h2>
-                    {% if page.lang == 'en' %}Current version: {{ site.version }}{% elsif page.lang == 'ru' %}Текущая версия: {{ site.version }}{% elsif page.lang == 'uk' %}Поточна версія: {{ site.version }}{% endif %}
+                    {% if page.lang == 'en' %}Current version: {{ page.version }}{% elsif page.lang == 'ru' %}Текущая версия: {{ page.version }}{% elsif page.lang == 'uk' %}Поточна версія: {{ page.version }}{% endif %}
                     <hr class="my-4" />
                 </div>
             </div>
