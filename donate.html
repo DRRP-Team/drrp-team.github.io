@@ -51,7 +51,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 345px;
+            width: 400px;
             background: rgba(0, 0, 0, 0.6);
         }
 
@@ -66,13 +66,67 @@
             background: white;
             margin: 6px;
         }
+
+        article code {
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+            display: inline-block;
+            word-break: break-all;
+        }
+
+        article code:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        article code.copied {
+            background-color: rgba(76, 175, 80, 0.3);
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(76, 175, 80, 0.9);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            font-size: 14px;
+            z-index: 1000;
+            animation: slideUp 0.3s ease-in-out, slideDown 0.3s ease-in-out 2.7s forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+        }
     </style>
 
     <meta name="description" content="Donate for DooM RPG Remake Project">
     <meta name="keywords"
         content="Donate, crypto, cryptocurrency, support, DRRP, DRPG, Doom RPG Remake Project, Doom RPG, J2ME, Java, doom mod, GZDoom, Jamdat, дум рпг">
     <meta name="robots" content="index, follow" />
-    
+
     <!-- Open Graph -->
     <meta property="og:title" content="Donate for [DRRP] DooM RPG Remake Project">
     <meta property="og:image" content="https://media.moddb.com/images/mods/1/42/41020/doom-rpg-remake-project.png">
@@ -84,7 +138,7 @@
     <meta property="og:locale:alternate" content="en_GB">
     <meta property="og:description"
         content="Donate for DRRP! DRRP - The modern classic. The GZDoom remake of idSoftware's mobile Doom RPG game.">
-    
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVRM7HDF5F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -105,60 +159,58 @@
 
         <main>
             <article>
-                <header>Bitcoin (BTC):</header>
+                <header>Tron (TRX or USDT <small>in TRC-20</small>):</header>
                 <img
-                    src="https://static.doomworld.com/monthly_2022_02/image.png.acb22a30e50f599bfd1d5f36200176fb.png"/>
+                    src="img/qr/tron.svg"/>
                 <footer>
-                    <code>bc1ql7f3eh5xpql3f2zjcj009cufkrqwlngacvz4l3</code>
+                    <code class="copyable">TDcgLCmXG2AL8KygYLXgPQhxiYPXDngVLd</code>
                 </footer>
             </article>
 
             <article>
-                <header>Ethereum (ETH):</header>
+                <header>Ton (TON or USDT <small>in TON</small>):</header>
                 <img
-                    src="https://static.doomworld.com/monthly_2022_02/image.png.687a94481f2e6a32ae285aa2850c1799.png">
+                    src="img/qr/ton.svg">
                 <footer>
-                    <code>0xDC8D33Bd96299c811E3267B37d06f6b33De7598E</code>
+                    <code class="copyable">UQDMW3oN3xiy8tufenBL3Vzr-kY2bZGW6HsBkEk3z9w5UvZl</code>
                 </footer>
             </article>
             <article>
-                <header>Tron (TRX):</header>
-                <img src="https://static.doomworld.com/monthly_2022_03/image.png.ceb282f9d47e3548d53dd22fa03871ab.png">
+                <header>Aptos (APT or USDC <small>in Aptos</small>):</header>
+                <img src="img/qr/aptos.svg">
                 <footer>
-                    <code>TDiFJHCFwdnx8o7Now3nSZEeFzS9h8sgcf</code>
-                </footer>
-            </article>
-            <article>
-                <header>Tether (USDT, TRC-20):</header>
-                <img src="https://static.doomworld.com/monthly_2022_03/image.png.ceb282f9d47e3548d53dd22fa03871ab.png">
-                <footer>
-                    <code>TDiFJHCFwdnx8o7Now3nSZEeFzS9h8sgcf</code>
-                </footer>
-            </article>
-            <article>
-                <header>Litecoin (LTC):</header>
-                <img src="https://static.doomworld.com/monthly_2022_03/image.png.0a9b012403082614616a7aefbdb9a470.png">
-                <footer>
-                    <code>ltc1q437sw54tzd0335zrwxdcx92yylhyshvvzpvw7w</code>
-                </footer>
-            </article>
-            <article>
-                <header>Dogecoin (DOGE):</header>
-                <img src="https://static.doomworld.com/monthly_2022_03/image.png.bf48863501fef1687f9948f66c77e4a1.png">
-                <footer>
-                    <code>DCvvjUjEk9qJm2b5r2VZamdGsFgKwSGX1W</code>
-                </footer>
-            </article>
-            <article>
-                <header>Cosmos (ATOM):</header>
-                <img src="https://static.doomworld.com/monthly_2022_03/image.png.050d180b46b3a69e900783701af09f9b.png">
-                <footer>
-                    <code>cosmos1f3ed2upkznue45k285xk8s75xmwp9efr5m8pu2</code>
+                    <code class="copyable">0xf074e517171ad7687cec4632f923aa32f3ddf07f5036830895f3e317ade46051</code>
                 </footer>
             </article>
         </main>
     </div>
 
+    <script>
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+
+        document.querySelectorAll('.copyable').forEach(element => {
+            element.addEventListener('click', function() {
+                const address = this.textContent;
+                navigator.clipboard.writeText(address).then(() => {
+                    this.classList.add('copied');
+                    showToast('Address copied to clipboard!');
+                    setTimeout(() => {
+                        this.classList.remove('copied');
+                    }, 2000);
+                }).catch(() => {
+                    showToast('Failed to copy address');
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
