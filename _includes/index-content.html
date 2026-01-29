@@ -1,3 +1,7 @@
+---
+version: 0.6.0pre
+---
+
 <body id="page-top">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -31,9 +35,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" onclick="toggleLanguage()">
-                            {% if page.lang == 'en' %}Русский{% elsif page.lang == 'ru' %}English{% elsif page.lang == 'uk' %}English{% endif %}
-                        </a>
+                        {% if page.lang != 'en' %}
+                        <a class="nav-link" href="{{ site.baseurl }}/en/" title="English">🇬🇧</a>
+                        {% endif %}
+                        {% if page.lang != 'ru' %}
+                        <a class="nav-link" href="{{ site.baseurl }}/ru/" title="Русский">🇷🇺</a>
+                        {% endif %}
+                        {% if page.lang != 'uk' %}
+                        <a class="nav-link" href="{{ site.baseurl }}/uk/" title="Українська">🇺🇦</a>
+                        {% endif %}
                     </li>
                 </ul>
             </div>
@@ -53,18 +63,18 @@
                     </h1>
                     <hr />
                     <h2>
-                        <span class="en war">
+                        <span class="war">
+                        {% if page.lang == 'en' %}
                             <span>The project is temporarily frozen until the end of the
                                 war</span>
-                            <span>The latest version at the moment is v0.6.0pre</span>
-                            <a href="https://standwithukraine.com.ua/" target="_blank">
-                                <img width="32"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/1200px-Flag_of_Ukraine.svg.png?20230624202942" />
-                                #standwithukraine</a>
-                        </span>
-                        <span class="ru war">
+                            <span>The latest version at the moment is {{ site.version }}</span>
+                        {% elsif page.lang == 'ru' %}
                             <span>Проект временно заморожен до окончания войны</span>
-                            <span>Последняя версия на данный момент - v0.6.0pre</span>
+                            <span>Последняя версия на данный момент - {{ site.version }}</span>
+                        {% elsif page.lang == 'uk' %}
+                            <span>Проект тимчасово заморожено до закінчення війни</span>
+                            <span>Остання версія на даний момент - {{ site.version }}</span>
+                        {% endif %}
                             <a href="https://standwithukraine.com.ua/" target="_blank">
                                 <img width="32"
                                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/1200px-Flag_of_Ukraine.svg.png?20230624202942" />
@@ -74,18 +84,24 @@
                     <hr />
                 </div>
                 <div class="col-lg-8 mx-auto">
+                    {% if page.lang == 'en' %}
                     <p class="text-faded mb-5">
-                        <span class="en">
-                            DRRP - The modern classic<br />
-                            It's a GZDoom remake of idSoftware's Doom RPG game
-                        </span>
-                        <span class="ru">
-                            DRRP - Современная классика<br />
-                            Ремейк игры Doom RPG от idSoftware для GZDoom
-                        </span>
+                        DRRP - The modern classic<br />
+                        It's a GZDoom remake of idSoftware's Doom RPG game
                     </p>
+                    {% elsif page.lang == 'ru' %}
+                    <p class="text-faded mb-5">
+                        DRRP - Современная классика<br />
+                        Ремейк игры Doom RPG от idSoftware для GZDoom
+                    </p>
+                    {% elsif page.lang == 'uk' %}
+                    <p class="text-faded mb-5">
+                        DRRP - Сучасна класика<br />
+                        Ремейк гри Doom RPG від idSoftware для GZDoom
+                    </p>
+                    {% endif %}
                     <a class="btn btn-primary btn-xl js-scroll-trigger" href="#download">
-                        {% if page.lang == 'en' %}Download{% elsif page.lang == 'ru' %}Скачать{% elsif page.lang == 'uk' %}Скачать{% endif %}
+                        {% if page.lang == 'en' %}Download{% elsif page.lang == 'ru' %}Скачать{% elsif page.lang == 'uk' %}Завантажити{% endif %}
                     </a>
                 </div>
             </div>
@@ -101,24 +117,34 @@
                         <!-- {% if page.lang == 'en' %}Remake of a mobile game{% elsif page.lang == 'ru' %}Ремейк мобильной игры{% elsif page.lang == 'uk' %}Ремейк мобильной игры{% endif %} -->
                     </h2>
                     <hr class="light my-4" />
+                    {% if page.lang == 'en' %}
                     <p class="about-text text-white mb-4">
-                        <span class="en">
-                            This project brings the Doom RPG game from a mobile platform to
-                            the GZDoom engine.<br /><br />
-                            The original atmosphere is beautifully intertwined with the
-                            latest features of the most modern Doom-ports.<br /><br />
-                            Detailed levels, RPG-leveling system, many dialogs in two
-                            languages - all of this in the DRRP project.
-                        </span>
-                        <span class="ru">
-                            Проект DRRP переносит игру Doom RPG с мобильной платформы на
-                            движок GZDoom.<br /><br />
-                            Оригинальная атмосфера красиво переплетается с новейшими
-                            возможностями современнейших Doom-портов.<br /><br />
-                            Детализированные уровни, система RPG-прокачки, множество
-                            диалогов на двух языках - всё это в проекте DRRP.
-                        </span>
+                        This project brings the Doom RPG game from a mobile platform to
+                        the GZDoom engine.<br /><br />
+                        The original atmosphere is beautifully intertwined with the
+                        latest features of the most modern Doom-ports.<br /><br />
+                        Detailed levels, RPG-leveling system, many dialogs in two
+                        languages - all of this in the DRRP project.
                     </p>
+                    {% elsif page.lang == 'ru' %}
+                    <p class="about-text text-white mb-4"></p>
+                        Проект DRRP переносит игру Doom RPG с мобильной платформы на
+                        движок GZDoom.<br /><br />
+                        Оригинальная атмосфера красиво переплетается с новейшими
+                        возможностями современнейших Doom-портов.<br /><br />
+                        Детализированные уровни, система RPG-прокачки, множество
+                        диалогов на двух языках - всё это в проекте DRRP.
+                    </p>
+                    {% elsif page.lang == 'uk' %}
+                    <p class="about-text text-white mb-4">
+                        Проект DRRP переносить гру Doom RPG з мобільної платформи на
+                        GZDoom.<br /><br />
+                        Оригінальна атмосфера гарно переплітається з новітніми
+                        можливостями сучасних Doom-портів.<br /><br />
+                        Деталізовані рівні, система RPG-прокачки, безліч
+                        діалогів двома мовами - все це в проекті DRRP.
+                    </p>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -133,7 +159,7 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
                     <h2 class="section-heading">
-                        {% if page.lang == 'en' %}Gameplay trailer{% elsif page.lang == 'ru' %}Геймплейный трейлер{% elsif page.lang == 'uk' %}Геймплейный трейлер{% endif %}
+                        {% if page.lang == 'en' %}Gameplay trailer{% elsif page.lang == 'ru' %}Геймплейный трейлер{% elsif page.lang == 'uk' %}Геймплейний трейлер{% endif %}
                     </h2>
                     <hr class="my-4" />
                     <p class="mb-5">
@@ -153,9 +179,9 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">
-                        {% if page.lang == 'en' %}Download{% elsif page.lang == 'ru' %}Скачать{% elsif page.lang == 'uk' %}Скачать{% endif %}
+                        {% if page.lang == 'en' %}Download{% elsif page.lang == 'ru' %}Скачать{% elsif page.lang == 'uk' %}Завантажити{% endif %}
                     </h2>
-                    {% if page.lang == 'en' %}Current version: v0.5.0{% elsif page.lang == 'ru' %}Текущая версия: v0.5.0{% elsif page.lang == 'uk' %}Текущая версия: v0.5.0{% endif %}
+                    {% if page.lang == 'en' %}Current version: {{ site.version }}{% elsif page.lang == 'ru' %}Текущая версия: {{ site.version }}{% elsif page.lang == 'uk' %}Поточна версія: {{ site.version }}{% endif %}
                     <hr class="my-4" />
                 </div>
             </div>
@@ -166,30 +192,51 @@
                     class="service-box col-sm-12 col-md-6 text-center">
                     <div class="mx-auto">
                         <h3 class="mt-3 mb-3">DRRP Launcher</h3>
+                        {% if page.lang == 'en' %}
                         <p class="text-muted">
-                            <span class="en">Recommended<br />Just press "Play" and the launcher will
-                                download, install and configure everything for you!<br />(Windows-only)</span>
-                            <span class="ru">Рекомендуется<br />Просто нажми "Играть" а лаунчер всё
-                                скачает, установит и настроит для тебя!<br />(Только для
-                                Windows)</span>
+                            Recommended<br />Just press "Play" and the launcher will
+                            download, install and configure everything for you!<br />(Windows-only)
                         </p>
+                        {% elsif page.lang == 'ru' %}
+                        <p class="text-muted">
+                            Рекомендуется<br />Просто нажми "Играть" а лаунчер всё
+                            скачает, установит и настроит для тебя!<br />(Только для
+                            Windows)
+                        </p>
+                        {% elsif page.lang == 'uk' %}
+                        <p class="text-muted">
+                            Рекомендується<br />Просто натисни "Грати" а лаунчер все
+                            завантажить, встановить і налаштує для тебе!<br />(Тільки
+                            для Windows)
+                        </p>
+                        {% endif %}
                     </div>
                 </a>
                 <a href="https://github.com/DRRP-Team/DRRP/archive/refs/tags/v0.6.0pre.zip"
                     class="service-box col-sm-12 col-md-6 text-center">
                     <div class="mx-auto">
                         <h3 class="mt-3 mb-3">PK3</h3>
+                        {% if page.lang == 'en' %}
                         <p class="text-muted">
-                            <span class="en">For advanced users<br />GZDoom 4.0+ is required</span>
-                            <span class="ru">Для продвинутых пользователей<br />Требуется GZDoom
-                                4.0+</span>
+                            For advanced users<br />GZDoom 4.0+ is required
                         </p>
+                        {% elsif page.lang == 'ru' %}
+                        <p class="text-muted">
+                            Для продвинутых пользователей<br />Требуется GZDoom
+                            4.0+
+                        </p>
+                        {% elsif page.lang == 'uk' %}
+                        <p class="text-muted">
+                            Для просунутих користувачів<br />Потрібен GZDoom
+                            4.0+
+                        </p>
+                        {% endif %}
                     </div>
                 </a>
             </div>
             <div class="row">
                 <a class="btn col-md-12 btn-xl btn-donate" href="{{ site.baseurl }}/donate.html" target="_blank">
-                    {% if page.lang == 'en' %}Support the project{% elsif page.lang == 'ru' %}Поддержать проект{% elsif page.lang == 'uk' %}Поддержать проект{% endif %}
+                    {% if page.lang == 'en' %}Support the project{% elsif page.lang == 'ru' %}Поддержать проект{% elsif page.lang == 'uk' %}Підтримати проект{% endif %}
                 </a>
             </div>
         </div>
@@ -312,69 +359,69 @@
         <div class="row">
             <div class="col-lg-6 ml-auto footer-col">
                 <h6>
-                    {% if page.lang == 'en' %}People who participated in the creation of the project:{% elsif page.lang == 'ru' %}Люди, принявшие участие в создании проекта:{% elsif page.lang == 'uk' %}Люди, принявшие участие в создании проекта:{% endif %}
+                    {% if page.lang == 'en' %}People who participated in the creation of the project:{% elsif page.lang == 'ru' %}Люди, принявшие участие в создании проекта:{% elsif page.lang == 'uk' %}Люди, що взяли участь у створенні проекту:{% endif %}
                 </h6>
                 <table>
                     <tr>
                         <th>PROPHESSOR</th>
                         <td>
-                            {% if page.lang == 'en' %}Founder, programmer, mapper{% elsif page.lang == 'ru' %}Основатель, программист, маппер{% elsif page.lang == 'uk' %}Основатель, программист, маппер{% endif %}
+                            {% if page.lang == 'en' %}Founder, programmer, mapper{% elsif page.lang == 'ru' %}Основатель, программист, маппер{% elsif page.lang == 'uk' %}Засновник, програміст, мапер{% endif %}
                         </td>
                     </tr>
                     <tr>
                         <th>Morthimer McMare</th>
                         <td>
-                            {% if page.lang == 'en' %}Programmer{% elsif page.lang == 'ru' %}Программист{% elsif page.lang == 'uk' %}Программист{% endif %}
+                            {% if page.lang == 'en' %}Programmer{% elsif page.lang == 'ru' %}Программист{% elsif page.lang == 'uk' %}Програміст{% endif %}
                         </td>
                     </tr>
                     <tr>
                         <th>UsernameAK</th>
                         <td>
-                            {% if page.lang == 'en' %}Programmer, mapper{% elsif page.lang == 'ru' %}Программист, маппер{% elsif page.lang == 'uk' %}Программист, маппер{% endif %}
+                            {% if page.lang == 'en' %}Programmer, mapper{% elsif page.lang == 'ru' %}Программист, маппер{% elsif page.lang == 'uk' %}Програміст, мапер{% endif %}
                         </td>
                     </tr>
                     <tr>
                         <th>3asyman</th>
                         <td>
-                            {% if page.lang == 'en' %}Graphics{% elsif page.lang == 'ru' %}Графика{% elsif page.lang == 'uk' %}Графика{% endif %}
+                            {% if page.lang == 'en' %}Graphics{% elsif page.lang == 'ru' %}Графика{% elsif page.lang == 'uk' %}Графіка{% endif %}
                         </td>
                     </tr>
                     <tr>
                         <th>StormCatcher.77</th>
                         <td>
-                            {% if page.lang == 'en' %}Mapper{% elsif page.lang == 'ru' %}Маппер{% elsif page.lang == 'uk' %}Маппер{% endif %}
+                            {% if page.lang == 'en' %}Mapper{% elsif page.lang == 'ru' %}Маппер{% elsif page.lang == 'uk' %}Мапер{% endif %}
                         </td>
                     </tr>
                     <tr>
                         <th>Amon</th>
                         <td>
-                            {% if page.lang == 'en' %}Tester, russian translation fix{% elsif page.lang == 'ru' %}Тестировщик, исправление русского перевода{% elsif page.lang == 'uk' %}Тестировщик, исправление русского перевода{% endif %}
+                            {% if page.lang == 'en' %}Tester, russian translation fix{% elsif page.lang == 'ru' %}Тестировщик, исправление русского перевода{% elsif page.lang == 'uk' %}Тестувальник, виправлення російського перекладу{% endif %}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {% if page.lang == 'en' %}Testers{% elsif page.lang == 'ru' %}Тестировщики{% elsif page.lang == 'uk' %}Тестировщики{% endif %}
+                            {% if page.lang == 'en' %}Testers{% elsif page.lang == 'ru' %}Тестировщики{% elsif page.lang == 'uk' %}Тестувальники{% endif %}
                         </th>
                         <td>Lord Taurus, Loriendal, Kamil, Mr. Epic, MarzoLeon</td>
                     </tr>
                     <tr>
                         <th>
                             Lolimpire
-                            <i>({% if page.lang == 'en' %}left{% elsif page.lang == 'ru' %}вышел{% elsif page.lang == 'uk' %}вышел{% endif %})
+                            <i>({% if page.lang == 'en' %}left{% elsif page.lang == 'ru' %}вышел{% elsif page.lang == 'uk' %}вийшов{% endif %})
                             </i>
                         </th>
                         <td>
-                            {% if page.lang == 'en' %}Mapper{% elsif page.lang == 'ru' %}Маппер{% elsif page.lang == 'uk' %}Маппер{% endif %}
+                            {% if page.lang == 'en' %}Mapper{% elsif page.lang == 'ru' %}Маппер{% elsif page.lang == 'uk' %}Мапер{% endif %}
                         </td>
                     </tr>
                     <tr class="badmember">
                         <th>
                             Nomakh
-                            <i>({% if page.lang == 'en' %}left{% elsif page.lang == 'ru' %}вышел{% elsif page.lang == 'uk' %}вышел{% endif %})
+                            <i>({% if page.lang == 'en' %}left{% elsif page.lang == 'ru' %}вышел{% elsif page.lang == 'uk' %}вийшов{% endif %})
                             </i>
                         </th>
                         <td>
-                            {% if page.lang == 'en' %}Mapper <i>(small enhancements)</i>{% elsif page.lang == 'ru' %}Маппер <i>(мелкие улучшения)</i>{% elsif page.lang == 'uk' %}Маппер <i>(мелкие улучшения)</i>{% endif %}
+                            {% if page.lang == 'en' %}Mapper <i>(small enhancements)</i>{% elsif page.lang == 'ru' %}Маппер <i>(мелкие улучшения)</i>{% elsif page.lang == 'uk' %}Мапер <i>(дрібні покращення)</i>{% endif %}
                         </td>
                     </tr>
                     <tr class="badmember">
@@ -383,23 +430,23 @@
                             <i>({% if page.lang == 'en' %}left{% elsif page.lang == 'ru' %}вышел{% elsif page.lang == 'uk' %}вышел{% endif %})</i>
                         </th>
                         <td>
-                            {% if page.lang == 'en' %}mapper <i>(did nothing)</i>{% elsif page.lang == 'ru' %}маппер <i>(ничего не сделал)</i>{% elsif page.lang == 'uk' %}маппер <i>(ничего не сделал)</i>{% endif %}
+                            {% if page.lang == 'en' %}mapper <i>(did nothing)</i>{% elsif page.lang == 'ru' %}маппер <i>(ничего не сделал)</i>{% elsif page.lang == 'uk' %}мапер <i>(нічого не зробив)</i>{% endif %}
                         </td>
                     </tr>
                     <tr class="badmember">
                         <th>
                             Zendos
-                            <i>({% if page.lang == 'en' %}left{% elsif page.lang == 'ru' %}вышел{% elsif page.lang == 'uk' %}вышел{% endif %})</i>
+                            <i>({% if page.lang == 'en' %}left{% elsif page.lang == 'ru' %}вышел{% elsif page.lang == 'uk' %}вийшов{% endif %})</i>
                         </th>
                         <td>
-                            {% if page.lang == 'en' %}mapper <i>(did nothing)</i>{% elsif page.lang == 'ru' %}маппер <i>(ничего не сделал)</i>{% elsif page.lang == 'uk' %}маппер <i>(ничего не сделал)</i>{% endif %}
+                            {% if page.lang == 'en' %}mapper <i>(did nothing)</i>{% elsif page.lang == 'ru' %}маппер <i>(ничего не сделал)</i>{% elsif page.lang == 'uk' %}мапер <i>(нічого не зробив)</i>{% endif %}
                         </td>
                     </tr>
                 </table>
             </div>
             <div class="col-lg-3 mr-auto text-center footer-col">
                 <h6>
-                    {% if page.lang == 'en' %}Useful links:{% elsif page.lang == 'ru' %}Полезные ссылки:{% elsif page.lang == 'uk' %}Полезные ссылки:{% endif %}
+                    {% if page.lang == 'en' %}Useful links:{% elsif page.lang == 'ru' %}Полезные ссылки:{% elsif page.lang == 'uk' %}Корисні посилання:{% endif %}
                 </h6>
                 <ul>
                     <li>
@@ -407,47 +454,40 @@
                         </a>
                     </li>
                     <li>
-                        <span class="en"><a
-                                href="https://doomworld.com/forum/topic/102919-drrp-doom-rpg-remake-project/"
-                                target="_blank">Topic on Doom World</a></span>
-                        <span class="ru"><a href="http://i.iddqd.ru/viewtopic.php?p=98116" target="_blank">Тема на Doom
-                                Power</a></span>
+                        {% if page.lang == 'en' %}
+                        <a href="https://doomworld.com/forum/topic/102919-drrp-doom-rpg-remake-project/"
+                            target="_blank">Topic on Doom World</a>
+                        {% elsif page.lang == 'ru' or page.lang == 'uk' %}
+                        <a href="http://i.iddqd.ru/viewtopic.php?p=98116" target="_blank">Тема на Doom
+                            Power</a>
+                        {% endif %}
                     </li>
                     <li>
-                        <a href="https://www.moddb.com/mods/drrp-doom-rpg-remake-project" target="_blank">ModDB <span
-                                class="en">page</span>
-                            <span class="ru">страница</span>
-                        </a>
+                        <a href="https://www.moddb.com/mods/drrp-doom-rpg-remake-project" target="_blank">ModDB {% if page.lang == 'en' %}page{% elsif page.lang == 'ru' %}страница{% elsif page.lang == 'uk' %}сторінка{% endif %}</a>
                     </li>
                     <li>
-                        <a href="https://github.com/DRRP-Team/DRRP" target="_blank">GitHub <span
-                                class="en">repository</span>
-                            <span class="ru">репозиторий</span>
-                        </a>
+                        <a href="https://github.com/DRRP-Team/DRRP" target="_blank">GitHub {% if page.lang == 'en' %}repository{% elsif page.lang == 'ru' %}репозиторий{% elsif page.lang == 'uk' %}репозиторій{% endif %}</a>
                     </li>
                     <li>
                         <a href="https://trello.com/b/OGA3JkEH/drrp-doom-rpg-remake-project" target="_blank">
-                            {% if page.lang == 'en' %}Trello board{% elsif page.lang == 'ru' %}Доска Trello{% elsif page.lang == 'uk' %}Доска Trello{% endif %}
+                            {% if page.lang == 'en' %}Trello board{% elsif page.lang == 'ru' %}Доска Trello{% elsif page.lang == 'uk' %}Дошка Trello{% endif %}
                         </a>
                     </li>
                     <li>
-                        <a href="https://gitlab.com/PROPHESSOR/DRRP" target="_blank">GitLab <span
-                                class="en">repository</span>
-                            <span class="ru">репозиторий</span>
-                        </a>
+                        <a href="https://gitlab.com/PROPHESSOR/DRRP" target="_blank">GitLab {% if page.lang == 'en' %}repository{% elsif page.lang == 'ru' %}репозиторий{% elsif page.lang == 'uk' %}репозиторій{% endif %}</a>
                     </li>
                     <li>
                         <a href="https://gitlab.com/PROPHESSOR/DRRP/wikis" target="_blank">
-                            {% if page.lang == 'en' %}DRRP Wiki{% elsif page.lang == 'ru' %}DRRP Вики{% elsif page.lang == 'uk' %}DRRP Вики{% endif %}
+                            {% if page.lang == 'en' %}DRRP Wiki{% elsif page.lang == 'ru' %}DRRP Вики{% elsif page.lang == 'uk' %}DRRP Вікі{% endif %}
                         </a>
                     </li>
                     <li>
                         <a href="https://github.com/DRRP-Team" target="_blank">
-                            {% if page.lang == 'en' %}Tools for development{% elsif page.lang == 'ru' %}Инструменты для разработки{% elsif page.lang == 'uk' %}Инструменты для разработки{% endif %}
+                            {% if page.lang == 'en' %}Tools for development{% elsif page.lang == 'ru' %}Инструменты для разработки{% elsif page.lang == 'uk' %}Інструменти для розробки{% endif %}
                         </a>
                     </li>
                     <li>
-                        <small><i>Copyright (c) DRRP Team 2017-2024</i></small>
+                        <small><i>Copyright (c) DRRP Team 2017-{{ "now" | date: "%Y" }}</i></small>
                     </li>
                     <li>
                         <small><i>Site by PROPHESSOR (2018)</i></small>
@@ -465,7 +505,7 @@
     <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
     <script src="js/drrp.min.js"></script>
 
-    <!-- 
+    <!--
         © DRRP Site by PROPHESSOR 2018-2024
         based on startbootstrap-creative template (https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-creative/master/LICENSE)
         Copyright (c) 2013-2018 Blackrock Digital LLC
