@@ -1,12 +1,7 @@
-User-agent: * 
+User-agent: *
 
 Allow: /
 
-Sitemap: http://drrpofficial.tk/sitemap.xml 
-Sitemap: http://drrpofficial.tk/sitemap2.xml
+Sitemap: https://drrp-team.github.io/sitemap.xml
 
-User-agent: Yandex 
-
-Allow: /
-
-Host: drrpofficial.tk
+Host: drrp-team.github.io
