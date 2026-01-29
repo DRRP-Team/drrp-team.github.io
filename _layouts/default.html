@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="{% if page.lang %}{{ page.lang }}{% else %}en{% endif %}" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <title>
+        {% if page.lang == 'en' or page.lang == nil %}[DRRP] - DOOM RPG REMAKE PROJECT (Official site){% endif %}
+        {% if page.lang == 'ru' %}[DRRP] - ПРОЕКТ ПЕРЕИЗДАНИЯ DOOM RPG (Официальный сайт){% endif %}
+        {% if page.lang == 'uk' %}[DRRP] - ПРОЕКТ ПЕРЕРОБКИ DOOM RPG (Офіційний сайт){% endif %}
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+
+    <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="{{ site.baseurl }}/favicon.png" type="image/png" />
+
+    <meta name="description" content="
+        {% if page.lang == 'en' or page.lang == nil %}DooM RPG Remake Project{% endif %}
+        {% if page.lang == 'ru' %}Проект переиздания Doom RPG{% endif %}
+        {% if page.lang == 'uk' %}Проект переробки Doom RPG{% endif %}
+    " />
+    <meta name="author" content="{{ site.author }}" />
+    <meta name="keywords"
+        content="DRRP, DRPG, Doom RPG Remake Project, Doom RPG, J2ME, Java, doom mod, GZDoom, Jamdat, дум рпг" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- hreflang links for SEO -->
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+    <link rel="alternate" hreflang="en" href="{{ site.url }}/" />
+    <link rel="alternate" hreflang="ru" href="{{ site.url }}/ru/" />
+    <link rel="alternate" hreflang="uk" href="{{ site.url }}/uk/" />
+    <link rel="alternate" hreflang="x-default" href="{{ site.url }}/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="[DRRP] DooM RPG Remake Project" />
+    <meta property="og:image" content="https://media.moddb.com/images/mods/1/42/41020/doom-rpg-remake-project.png" />
+    <meta property="og:video" content="https://www.youtube.com/watch?v=jlqGCped3MM" />
+    <meta property="og:site_name" content="DRRP" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    {% if page.lang == 'en' or page.lang == nil %}
+    <meta property="og:locale" content="en_US" />
+    {% elsif page.lang == 'ru' %}
+    <meta property="og:locale" content="ru_RU" />
+    {% elsif page.lang == 'uk' %}
+    <meta property="og:locale" content="uk_UA" />
+    {% endif %}
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="ru_RU" />
+    <meta property="og:locale:alternate" content="uk_UA" />
+    <meta property="og:description" content="
+        {% if page.lang == 'en' or page.lang == nil %}DRRP - The modern classic. The GZDoom remake of idSoftware's mobile Doom RPG game.{% endif %}
+        {% if page.lang == 'ru' %}DRRP - Современная классика. Ремейк игры Doom RPG от idSoftware для GZDoom.{% endif %}
+        {% if page.lang == 'uk' %}DRRP - Сучасна класика. Ремейк гри Doom RPG від idSoftware для GZDoom.{% endif %}
+    " />
+
+    <meta name="google-site-verification" content="QuSjkbHcR5_XhPg-PRe_waV1SbUMbjivX0MOYfSXaq8" />
+
+    <link href="{{ site.baseurl }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+    <link href="{{ site.baseurl }}/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" />
+    <link href="{{ site.baseurl }}/css/drrp.min.css" rel="stylesheet" />
+
+    <style>
+        .war {
+            display: flex;
+            flex-direction: column;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border: 1px solid red;
+            border-radius: 20px;
+            gap: 20px;
+        }
+
+        #download .row:first-child a:first-child {
+            box-shadow: 0px 0px 20px orange inset;
+        }
+
+        .lang-flag {
+            cursor: pointer;
+            margin-left: 8px;
+            display: inline-block;
+            font-size: 20px;
+            transition: opacity 0.2s ease;
+        }
+
+        .lang-flag:hover {
+            opacity: 0.7;
+        }
+    </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZTNBEXWSF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-JZTNBEXWSF");
+    </script>
+</head>
+
+<body id="page-top">
+    {% include index-content.html %}
+
+    <script src="{{ site.baseurl }}/vendor/jquery/jquery.min.js"></script>
+    <script src="{{ site.baseurl }}/vendor/popover/popper.min.js"></script>
+    <script src="{{ site.baseurl }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ site.baseurl }}/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{{ site.baseurl }}/vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="{{ site.baseurl }}/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="{{ site.baseurl }}/js/drrp.min.js"></script>
+
+

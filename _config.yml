@@ -1,0 +1,21 @@
+title: DRRP - DOOM RPG Remake Project
+description: The modern classic. The GZDoom remake of idSoftware's mobile Doom RPG game.
+author: PROPHESSOR
+url: https://drrp-team.github.io
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - .gitignore
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+languages:
+  - en
+  - ru
+  - uk
+
+default_lang: en

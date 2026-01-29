@@ -1,0 +1,473 @@
+<body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="{{ site.baseurl }}/">Doom RPG Remake Project</a>
+            <button class="col-12 navbar-toggler navbar-toggler-right navbar-dark" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#about">
+                            {% if page.lang == 'en' %}About{% elsif page.lang == 'ru' %}О проекте{% elsif page.lang == 'uk' %}О проекте{% endif %}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#download">
+                            {% if page.lang == 'en' %}Download{% elsif page.lang == 'ru' %}Скачать{% elsif page.lang == 'uk' %}Скачать{% endif %}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#screenshots">
+                            {% if page.lang == 'en' %}Screenshots{% elsif page.lang == 'ru' %}Скриншоты{% elsif page.lang == 'uk' %}Скриншоты{% endif %}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{{ site.baseurl }}/donate.html" target="_blank">
+                            {% if page.lang == 'en' %}Donate{% elsif page.lang == 'ru' %}Поддержать{% elsif page.lang == 'uk' %}Поддержать{% endif %}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="toggleLanguage()">
+                            {% if page.lang == 'en' %}Русский{% elsif page.lang == 'ru' %}English{% elsif page.lang == 'uk' %}English{% endif %}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="masthead text-center text-white d-flex">
+        <div class="overlay"></div>
+        <div class="container my-auto">
+            <div class="beta">
+                {% if page.lang == 'en' %}Beta{% elsif page.lang == 'ru' %}Бета{% elsif page.lang == 'uk' %}Бета{% endif %}
+            </div>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="text-uppercase">
+                        <strong>DOOM RPG REMAKE PROJECT</strong>
+                    </h1>
+                    <hr />
+                    <h2>
+                        <span class="en war">
+                            <span>The project is temporarily frozen until the end of the
+                                war</span>
+                            <span>The latest version at the moment is v0.6.0pre</span>
+                            <a href="https://standwithukraine.com.ua/" target="_blank">
+                                <img width="32"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/1200px-Flag_of_Ukraine.svg.png?20230624202942" />
+                                #standwithukraine</a>
+                        </span>
+                        <span class="ru war">
+                            <span>Проект временно заморожен до окончания войны</span>
+                            <span>Последняя версия на данный момент - v0.6.0pre</span>
+                            <a href="https://standwithukraine.com.ua/" target="_blank">
+                                <img width="32"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/1200px-Flag_of_Ukraine.svg.png?20230624202942" />
+                                #standwithukraine</a>
+                        </span>
+                    </h2>
+                    <hr />
+                </div>
+                <div class="col-lg-8 mx-auto">
+                    <p class="text-faded mb-5">
+                        <span class="en">
+                            DRRP - The modern classic<br />
+                            It's a GZDoom remake of idSoftware's Doom RPG game
+                        </span>
+                        <span class="ru">
+                            DRRP - Современная классика<br />
+                            Ремейк игры Doom RPG от idSoftware для GZDoom
+                        </span>
+                    </p>
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="#download">
+                        {% if page.lang == 'en' %}Download{% elsif page.lang == 'ru' %}Скачать{% elsif page.lang == 'uk' %}Скачать{% endif %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-main" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 mx-auto text-center">
+                    <h2 class="section-heading text-faded">
+                        Doom RPG Remake Project (DRRP)
+                        <!-- {% if page.lang == 'en' %}Remake of a mobile game{% elsif page.lang == 'ru' %}Ремейк мобильной игры{% elsif page.lang == 'uk' %}Ремейк мобильной игры{% endif %} -->
+                    </h2>
+                    <hr class="light my-4" />
+                    <p class="about-text text-white mb-4">
+                        <span class="en">
+                            This project brings the Doom RPG game from a mobile platform to
+                            the GZDoom engine.<br /><br />
+                            The original atmosphere is beautifully intertwined with the
+                            latest features of the most modern Doom-ports.<br /><br />
+                            Detailed levels, RPG-leveling system, many dialogs in two
+                            languages - all of this in the DRRP project.
+                        </span>
+                        <span class="ru">
+                            Проект DRRP переносит игру Doom RPG с мобильной платформы на
+                            движок GZDoom.<br /><br />
+                            Оригинальная атмосфера красиво переплетается с новейшими
+                            возможностями современнейших Doom-портов.<br /><br />
+                            Детализированные уровни, система RPG-прокачки, множество
+                            диалогов на двух языках - всё это в проекте DRRP.
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trailers">
+        <iframe
+            src="https://www.youtube.com/embed/jlqGCped3MM?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1&amp;loop=1&amp;mute=1&amp;playlist=jlqGCped3MM"
+            frameborder="0" allow="autoplay; encrypted-media" autoplay allowfullscreen></iframe>
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading">
+                        {% if page.lang == 'en' %}Gameplay trailer{% elsif page.lang == 'ru' %}Геймплейный трейлер{% elsif page.lang == 'uk' %}Геймплейный трейлер{% endif %}
+                    </h2>
+                    <hr class="my-4" />
+                    <p class="mb-5">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/jlqGCped3MM"
+                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <!-- 560x315 -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr />
+
+    <section id="download" class="text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">
+                        {% if page.lang == 'en' %}Download{% elsif page.lang == 'ru' %}Скачать{% elsif page.lang == 'uk' %}Скачать{% endif %}
+                    </h2>
+                    {% if page.lang == 'en' %}Current version: v0.5.0{% elsif page.lang == 'ru' %}Текущая версия: v0.5.0{% elsif page.lang == 'uk' %}Текущая версия: v0.5.0{% endif %}
+                    <hr class="my-4" />
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <a href="https://github.com/DRRP-Team/DRRP-Launcher/releases"
+                    class="service-box col-sm-12 col-md-6 text-center">
+                    <div class="mx-auto">
+                        <h3 class="mt-3 mb-3">DRRP Launcher</h3>
+                        <p class="text-muted">
+                            <span class="en">Recommended<br />Just press "Play" and the launcher will
+                                download, install and configure everything for you!<br />(Windows-only)</span>
+                            <span class="ru">Рекомендуется<br />Просто нажми "Играть" а лаунчер всё
+                                скачает, установит и настроит для тебя!<br />(Только для
+                                Windows)</span>
+                        </p>
+                    </div>
+                </a>
+                <a href="https://github.com/DRRP-Team/DRRP/archive/refs/tags/v0.6.0pre.zip"
+                    class="service-box col-sm-12 col-md-6 text-center">
+                    <div class="mx-auto">
+                        <h3 class="mt-3 mb-3">PK3</h3>
+                        <p class="text-muted">
+                            <span class="en">For advanced users<br />GZDoom 4.0+ is required</span>
+                            <span class="ru">Для продвинутых пользователей<br />Требуется GZDoom
+                                4.0+</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="row">
+                <a class="btn col-md-12 btn-xl btn-donate" href="{{ site.baseurl }}/donate.html" target="_blank">
+                    {% if page.lang == 'en' %}Support the project{% elsif page.lang == 'ru' %}Поддержать проект{% elsif page.lang == 'uk' %}Поддержать проект{% endif %}
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="screenshots">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">
+                        {% if page.lang == 'en' %}Screenshots{% elsif page.lang == 'ru' %}Скриншоты{% elsif page.lang == 'uk' %}Скриншоты{% endif %}
+                    </h2>
+                    <hr class="my-4" />
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid p-0">
+            <div class="row no-gutters popup-gallery">
+                <div class="col-lg-4 col-sm-6">
+                    <a class="screenshots-box" href="img/screenshots/fullsize/1.jpg">
+                        <img class="img-fluid" src="img/screenshots/thumbnails/1.jpg" alt="drrp screenshot sector 4" />
+                        <div class="screenshots-box-caption">
+                            <div class="screenshots-box-caption-content">
+                                <div class="project-category text-faded">
+                                    {% if page.lang == 'en' %}Maps{% elsif page.lang == 'ru' %}Карты{% elsif page.lang == 'uk' %}Карты{% endif %}
+                                </div>
+                                <div class="project-name">
+                                    {% if page.lang == 'en' %}Sector 4{% elsif page.lang == 'ru' %}Сектор 4{% elsif page.lang == 'uk' %}Сектор 4{% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="screenshots-box" href="img/screenshots/fullsize/2.jpg">
+                        <img class="img-fluid" src="img/screenshots/thumbnails/2.jpg" alt="drrp screenshot sector 1" />
+                        <div class="screenshots-box-caption">
+                            <div class="screenshots-box-caption-content">
+                                <div class="project-category text-faded">
+                                    {% if page.lang == 'en' %}Maps{% elsif page.lang == 'ru' %}Карты{% elsif page.lang == 'uk' %}Карты{% endif %}
+                                </div>
+                                <div class="project-name">
+                                    {% if page.lang == 'en' %}Sector 1{% elsif page.lang == 'ru' %}Сектор 1{% elsif page.lang == 'uk' %}Сектор 1{% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="screenshots-box"
+                        href="img/screenshots/fullsize/sector2.jpg">
+                        <img class="img-fluid"
+                            src="img/screenshots/fullsize/sector2.jpg"
+                            alt="drrp screenshot sector 2" />
+                        <div class="screenshots-box-caption">
+                            <div class="screenshots-box-caption-content">
+                                <div class="project-category text-faded">
+                                    {% if page.lang == 'en' %}Maps{% elsif page.lang == 'ru' %}Карты{% elsif page.lang == 'uk' %}Карты{% endif %}
+                                </div>
+                                <div class="project-name">
+                                    {% if page.lang == 'en' %}Sector 2{% elsif page.lang == 'ru' %}Сектор 2{% elsif page.lang == 'uk' %}Сектор 2{% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="screenshots-box" href="img/screenshots/fullsize/4.jpg">
+                        <img class="img-fluid" src="img/screenshots/thumbnails/4.jpg" alt="drrp screenshot reactor" />
+                        <div class="screenshots-box-caption">
+                            <div class="screenshots-box-caption-content">
+                                <div class="project-category text-faded">
+                                    {% if page.lang == 'en' %}Maps{% elsif page.lang == 'ru' %}Карты{% elsif page.lang == 'uk' %}Карты{% endif %}
+                                </div>
+                                <div class="project-name">
+                                    {% if page.lang == 'en' %}Reactor{% elsif page.lang == 'ru' %}Реактор{% elsif page.lang == 'uk' %}Реактор{% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="screenshots-box"
+                        href="img/screenshots/fullsize/reactor.jpg">
+                        <img class="img-fluid"
+                            src="img/screenshots/fullsize/reactor.jpg"
+                            alt="drrp screenshot reactor" />
+                        <div class="screenshots-box-caption">
+                            <div class="screenshots-box-caption-content">
+                                <div class="project-category text-faded">
+                                    {% if page.lang == 'en' %}Maps{% elsif page.lang == 'ru' %}Карты{% elsif page.lang == 'uk' %}Карты{% endif %}
+                                </div>
+                                <div class="project-name">
+                                    {% if page.lang == 'en' %}Reactor{% elsif page.lang == 'ru' %}Реактор{% elsif page.lang == 'uk' %}Реактор{% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="screenshots-box" href="img/screenshots/fullsize/6.jpg">
+                        <img class="img-fluid" src="img/screenshots/thumbnails/6.jpg" alt="drrp screenshot sector 1" />
+                        <div class="screenshots-box-caption">
+                            <div class="screenshots-box-caption-content">
+                                <div class="project-category text-faded">
+                                    {% if page.lang == 'en' %}Maps{% elsif page.lang == 'ru' %}Карты{% elsif page.lang == 'uk' %}Карты{% endif %}
+                                </div>
+                                <div class="project-name">
+                                    {% if page.lang == 'en' %}Sector 1{% elsif page.lang == 'ru' %}Сектор 1{% elsif page.lang == 'uk' %}Сектор 1{% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer bg-dark text-white">
+        <div class="row">
+            <div class="col-lg-6 ml-auto footer-col">
+                <h6>
+                    {% if page.lang == 'en' %}People who participated in the creation of the project:{% elsif page.lang == 'ru' %}Люди, принявшие участие в создании проекта:{% elsif page.lang == 'uk' %}Люди, принявшие участие в создании проекта:{% endif %}
+                </h6>
+                <table>
+                    <tr>
+                        <th>PROPHESSOR</th>
+                        <td>
+                            {% if page.lang == 'en' %}Founder, programmer, mapper{% elsif page.lang == 'ru' %}Основатель, программист, маппер{% elsif page.lang == 'uk' %}Основатель, программист, маппер{% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Morthimer McMare</th>
+                        <td>
+                            {% if page.lang == 'en' %}Programmer{% elsif page.lang == 'ru' %}Программист{% elsif page.lang == 'uk' %}Программист{% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>UsernameAK</th>
+                        <td>
+                            {% if page.lang == 'en' %}Programmer, mapper{% elsif page.lang == 'ru' %}Программист, маппер{% elsif page.lang == 'uk' %}Программист, маппер{% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>3asyman</th>
+                        <td>
+                            {% if page.lang == 'en' %}Graphics{% elsif page.lang == 'ru' %}Графика{% elsif page.lang == 'uk' %}Графика{% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>StormCatcher.77</th>
+                        <td>
+                            {% if page.lang == 'en' %}Mapper{% elsif page.lang == 'ru' %}Маппер{% elsif page.lang == 'uk' %}Маппер{% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Amon</th>
+                        <td>
+                            {% if page.lang == 'en' %}Tester, russian translation fix{% elsif page.lang == 'ru' %}Тестировщик, исправление русского перевода{% elsif page.lang == 'uk' %}Тестировщик, исправление русского перевода{% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {% if page.lang == 'en' %}Testers{% elsif page.lang == 'ru' %}Тестировщики{% elsif page.lang == 'uk' %}Тестировщики{% endif %}
+                        </th>
+                        <td>Lord Taurus, Loriendal, Kamil, Mr. Epic, MarzoLeon</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Lolimpire
+                            <i>({% if page.lang == 'en' %}left{% elsif page.lang == 'ru' %}вышел{% elsif page.lang == 'uk' %}вышел{% endif %})
+                            </i>
+                        </th>
+                        <td>
+                            {% if page.lang == 'en' %}Mapper{% elsif page.lang == 'ru' %}Маппер{% elsif page.lang == 'uk' %}Маппер{% endif %}
+                        </td>
+                    </tr>
+                    <tr class="badmember">
+                        <th>
+                            Nomakh
+                            <i>({% if page.lang == 'en' %}left{% elsif page.lang == 'ru' %}вышел{% elsif page.lang == 'uk' %}вышел{% endif %})
+                            </i>
+                        </th>
+                        <td>
+                            {% if page.lang == 'en' %}Mapper <i>(small enhancements)</i>{% elsif page.lang == 'ru' %}Маппер <i>(мелкие улучшения)</i>{% elsif page.lang == 'uk' %}Маппер <i>(мелкие улучшения)</i>{% endif %}
+                        </td>
+                    </tr>
+                    <tr class="badmember">
+                        <th>
+                            DOOMGABR
+                            <i>({% if page.lang == 'en' %}left{% elsif page.lang == 'ru' %}вышел{% elsif page.lang == 'uk' %}вышел{% endif %})</i>
+                        </th>
+                        <td>
+                            {% if page.lang == 'en' %}mapper <i>(did nothing)</i>{% elsif page.lang == 'ru' %}маппер <i>(ничего не сделал)</i>{% elsif page.lang == 'uk' %}маппер <i>(ничего не сделал)</i>{% endif %}
+                        </td>
+                    </tr>
+                    <tr class="badmember">
+                        <th>
+                            Zendos
+                            <i>({% if page.lang == 'en' %}left{% elsif page.lang == 'ru' %}вышел{% elsif page.lang == 'uk' %}вышел{% endif %})</i>
+                        </th>
+                        <td>
+                            {% if page.lang == 'en' %}mapper <i>(did nothing)</i>{% elsif page.lang == 'ru' %}маппер <i>(ничего не сделал)</i>{% elsif page.lang == 'uk' %}маппер <i>(ничего не сделал)</i>{% endif %}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-lg-3 mr-auto text-center footer-col">
+                <h6>
+                    {% if page.lang == 'en' %}Useful links:{% elsif page.lang == 'ru' %}Полезные ссылки:{% elsif page.lang == 'uk' %}Полезные ссылки:{% endif %}
+                </h6>
+                <ul>
+                    <li>
+                        <a href="https://discord.gg/KXUuwJW" target="_blank">Discord {% if page.lang == 'en' %}server{% elsif page.lang == 'ru' %}сервер{% elsif page.lang == 'uk' %}сервер{% endif %}
+                        </a>
+                    </li>
+                    <li>
+                        <span class="en"><a
+                                href="https://doomworld.com/forum/topic/102919-drrp-doom-rpg-remake-project/"
+                                target="_blank">Topic on Doom World</a></span>
+                        <span class="ru"><a href="http://i.iddqd.ru/viewtopic.php?p=98116" target="_blank">Тема на Doom
+                                Power</a></span>
+                    </li>
+                    <li>
+                        <a href="https://www.moddb.com/mods/drrp-doom-rpg-remake-project" target="_blank">ModDB <span
+                                class="en">page</span>
+                            <span class="ru">страница</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/DRRP-Team/DRRP" target="_blank">GitHub <span
+                                class="en">repository</span>
+                            <span class="ru">репозиторий</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://trello.com/b/OGA3JkEH/drrp-doom-rpg-remake-project" target="_blank">
+                            {% if page.lang == 'en' %}Trello board{% elsif page.lang == 'ru' %}Доска Trello{% elsif page.lang == 'uk' %}Доска Trello{% endif %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://gitlab.com/PROPHESSOR/DRRP" target="_blank">GitLab <span
+                                class="en">repository</span>
+                            <span class="ru">репозиторий</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://gitlab.com/PROPHESSOR/DRRP/wikis" target="_blank">
+                            {% if page.lang == 'en' %}DRRP Wiki{% elsif page.lang == 'ru' %}DRRP Вики{% elsif page.lang == 'uk' %}DRRP Вики{% endif %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/DRRP-Team" target="_blank">
+                            {% if page.lang == 'en' %}Tools for development{% elsif page.lang == 'ru' %}Инструменты для разработки{% elsif page.lang == 'uk' %}Инструменты для разработки{% endif %}
+                        </a>
+                    </li>
+                    <li>
+                        <small><i>Copyright (c) DRRP Team 2017-2024</i></small>
+                    </li>
+                    <li>
+                        <small><i>Site by PROPHESSOR (2018)</i></small>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popover/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="js/drrp.min.js"></script>
+
+    <!-- 
+        © DRRP Site by PROPHESSOR 2018-2024
+        based on startbootstrap-creative template (https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-creative/master/LICENSE)
+        Copyright (c) 2013-2018 Blackrock Digital LLC
+    -->
+</body>
